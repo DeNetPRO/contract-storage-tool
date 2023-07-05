@@ -27,3 +27,14 @@ python3 main.py
 |  Polygon  |  137  |  nodenft  | 0xCb19BedE3e4F64B6B0085D99127F6d0A25b7180D |
 |  Polygon  |  137  |  charity_pos  | 0x013e9F8cf67D3cf74789096A393fcAD2A154084F |
 |  Polygon  |  137  |  gastoken_mined  | 0xF98590aaeAcaC2Abfe29126b5BE8793714dc7553 |
+
+
+
+## Modify by your self
+
+open main.py and edit it by yourserlf
+
+```python3
+w3 = Web3(Web3.HTTPProvider('https://polygon-rpc.com')) # RPC URL
+contract_storage_address = "0xB6b309Ae66A12d69259566220A2D0e35fE4bC556" # Contract Storage Address
+```
