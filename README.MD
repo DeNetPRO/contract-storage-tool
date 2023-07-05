@@ -9,6 +9,14 @@
 pip install web3
 ```
 
+3. Set RPC and address
+
+| Network Type | RPC URL                             | Contract Address                       |
+|--------------|-------------------------------------|----------------------------------------|
+| Testnet      | `https://rpc.ankr.com/polygon_mumbai` | `0x9d304623C5fB154628bd4672c28114ED97bee77E` |
+| Mainnet      | `https://polygon-rpc.com`            | `0xB6b309Ae66A12d69259566220A2D0e35fE4bC556` |
+
+
 ## Run
 
 ```bash

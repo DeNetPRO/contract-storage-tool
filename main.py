@@ -1,8 +1,15 @@
 from web3 import Web3
 import json, time
 
+
+# Testnet Address
+w3 = Web3(Web3.HTTPProvider('https://rpc.ankr.com/polygon_mumbai'))
+contract_storage_address = "0x9d304623C5fB154628bd4672c28114ED97bee77E"
+
+# Mainnet Address
 w3 = Web3(Web3.HTTPProvider('https://polygon-rpc.com'))
 contract_storage_address = "0xB6b309Ae66A12d69259566220A2D0e35fE4bC556"
+
 
 def to_checksum_address(address: str) -> str:
     w3 = Web3()
@@ -11,6 +18,8 @@ def to_checksum_address(address: str) -> str:
 def getNetworkName(network_id):
 	if network_id == 137:
 		return "Polygon"
+	if network_id == 80001:
+		return "Mumbai-Testnet"
 	return "Unknown"
 
 abi = [{"inputs":[{"internalType":"bytes32","name":"contractName","type":"bytes32"},{"internalType":"uint256","name":"networkId","type":"uint256"}],"name":"getContractAddress","outputs":[{"internalType":"address","name":"","type":"address"}],"stateMutability":"view","type":"function"},{"inputs":[{"internalType":"string","name":"contractString","type":"string"},{"internalType":"uint256","name":"networkId","type":"uint256"}],"name":"getContractAddressViaName","outputs":[{"internalType":"address","name":"","type":"address"}],"stateMutability":"view","type":"function"},{"inputs":[{"internalType":"uint256","name":"networkId","type":"uint256"}],"name":"getContractListOfNetwork","outputs":[{"internalType":"string[]","name":"","type":"string[]"}],"stateMutability":"view","type":"function"},{"inputs":[],"name":"getNetworkLists","outputs":[{"internalType":"uint256[]","name":"","type":"uint256[]"}],"stateMutability":"view","type":"function"},{"inputs":[{"internalType":"string","name":"nameString","type":"string"}],"name":"stringToContractName","outputs":[{"internalType":"bytes32","name":"","type":"bytes32"}],"stateMutability":"pure","type":"function"}]
